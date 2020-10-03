@@ -1,0 +1,39 @@
+<div class="parent">
+  
+<form class="example-form" [formGroup]="MyForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label> Nom de Module</mat-label>
+    <input matInput placeholder="Web 2 " formControlName="nom_de_module">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>description</mat-label>
+    <textarea matInput placeholder="It..." formControlName="description"></textarea>
+  </mat-form-field>
+  <br>
+
+  <table class="table table-bordered" formArrayName="cours">
+    <tr>
+      <th colspan="2">ajouter les cours :</th>
+      <th width="150px"><button type="button" (click)="addNewCour()" class="btn btn-primary">+</button></th>
+    </tr>
+    <tr *ngFor="let cour of cours().controls; let i=index" [formGroupName]="i">
+      <td>
+          titre :
+          <input type="text" formControlName="titre" class="form-control">
+      </td>
+      <td>
+          description:
+          <input type="text" formControlName="description" class="form-control">
+      </td>
+      <td>
+          <button (click)="removeCour(i)" class="btn btn-danger">Remove</button>
+          
+      </td>
+    </tr>
+  </table>
+  <button mat-raised-button color="primary">Ajouter</button>
+
+</form>
+
+</div>

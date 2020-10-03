@@ -1,0 +1,34 @@
+
+<div class="header">
+<mat-toolbar>
+    <button  routerLink= "/home" mat-icon-button class="example-icon" aria-label="Example icon-button with home icon">
+      <mat-icon>home</mat-icon>
+      <span>Menu</span>
+    </button>
+    <span class="example-spacer"></span>
+    <button routerLink= "/mymodules" *ngIf="isAuthenticated" mat-icon-button class="example-icon" aria-label="Example icon-button with profile icon">
+        <mat-icon>book</mat-icon>
+        <span>Mes modules  </span>
+      </button>
+      <span class="example-spacer"></span>
+      <button routerLink="/create" *ngIf="isAuthenticated" mat-icon-button class="example-icon" aria-label="Example icon-button with profile icon">
+        <mat-icon>subject</mat-icon>
+        <span>Creé Module</span>
+      </button>
+    <span class="example-spacer"></span>
+    <button routerLink= "/login" *ngIf="!isAuthenticated" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>login</mat-icon>
+      <span>login</span>
+    </button>
+    <span class="example-spacer"></span>
+    <button  routerLink= "/SignUp" *ngIf="!isAuthenticated" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>person_add</mat-icon>
+        <span>Sign Up</span>
+      </button>
+    <span class="example-spacer"></span>
+    <button routerLink= "/home" (click)="loggingOut()" *ngIf="isAuthenticated" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,26 @@
+<div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="RegistreForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="RegistreForm.controls.email.touched && RegistreForm.controls.email.invalid">
+            <span *ngIf="RegistreForm.controls.email.errors.required">This field is mandatory.</span>
+            <span *ngIf="RegistreForm.controls.email.errors.pattern">This field is invalid.</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Password
+          </mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error *ngIf="RegistreForm.controls.password.touched && RegistreForm.controls.password.invalid">
+            <span *ngIf="RegistreForm.controls.password.errors.required">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Sign Up</button>
+
+      </form>
+      {{MessageResult}}
+    </div>
+</div>

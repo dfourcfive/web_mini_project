@@ -1,0 +1,19 @@
+<div class="smt">
+<mat-card class="example-card" *ngFor="let module of modules;let i=index">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{module.nom}}</mat-card-title>
+      <mat-card-subtitle>{{module.description}}    </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+           {{module.cours.length}} cours
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button routerLink= "/edit" (click)="SendToEdit(i)"  mat-button color="primary">Edit</button>
+        <button mat-button color="warn" (click)="DeleteModule(i)">Delete</button>
+    </mat-card-actions>
+    <mat-divider></mat-divider>
+  </mat-card>
+</div>

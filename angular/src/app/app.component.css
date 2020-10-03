@@ -1,0 +1,16 @@
+.expanded-toolbar {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .header{
+    background-color: #7082e6;
+  }
+  @media(min-width:300px){
+    .example-spacer{
+      flex:1 0 auto;
+    }
+  }
